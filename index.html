@@ -272,6 +272,9 @@ details p{padding:0 48px 22px 0;color:var(--muted);max-width:70ch}
 /* Laufbahn in 3D */
 .btn3d{background:linear-gradient(100deg,#2bb7d6,#6d4fa0 50%,#d63c9b);box-shadow:0 6px 22px rgba(109,79,160,.35)}
 .btn3d:hover{background:linear-gradient(100deg,#1f9fbd,#5a3f88 50%,#b82f84)}
+/* Frag Elizabeth arriba: lo de KI a primera vista (WhatsApp y E-Mail siguen en Kontakt) */
+.btn-ki{background:var(--accent)}
+.btn-ki:hover{background:var(--ink)}
 .globe-card{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:20px;align-items:center;text-decoration:none;padding:22px 26px;border-radius:18px;color:#f5f0ff;
   background:radial-gradient(80% 140% at 0% 50%,rgba(141,92,255,.55),transparent 60%),radial-gradient(70% 140% at 100% 50%,rgba(255,66,184,.35),transparent 60%),#0b0720;transition:transform .25s,box-shadow .25s}
 .globe-card:hover{transform:translateY(-3px);box-shadow:0 24px 50px rgba(31,29,36,.18)}
@@ -319,9 +322,8 @@ details p{padding:0 48px 22px 0;color:var(--muted);max-width:70ch}
       <div class="links">
         <a class="btn" href="#projekte">Projekte ansehen <span aria-hidden="true">→</span></a>
         <a class="btn btn3d" href="https://claude.ai/artifact/RntR2yEP8NWkmtoArhUp8n" target="_blank" rel="noopener">✨ Meine Laufbahn in 3D <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-ki ki-link" href="https://lunita486.github.io/frag-elizabeth/?lang=de" target="_blank" rel="noopener"><span aria-hidden="true">💬</span> Frag Elizabeth: Mein KI-Assistent</a>
         <a class="tl" href="https://www.linkedin.com/in/elizabeth-casas-jimenez" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="tl" href="https://wa.me/4916091168541?text=Hallo%20Elizabeth%2C%20ich%20habe%20Ihr%20Portfolio%20gesehen." target="_blank" rel="noopener">WhatsApp</a>
-        <a class="tl" href="#kontakt">E-Mail</a>
       </div>
     </div>
     <figure class="portrait">
@@ -588,7 +590,7 @@ const tb=document.getElementById('topbar');const onS=()=>tb.classList.toggle('on
     els.forEach(el=>{el.innerHTML=l==='de'?el._de:T[el._de][i]});
     attrs.forEach(x=>x.el.setAttribute(x.a,l==='de'?x.de:x.tr[i]));
     wa.forEach(x=>{x.a.href=l==='de'?x.de:x.de.split('?text=')[0]+'?text='+WA[i]});
-    const ab=document.getElementById('askbot');if(ab)ab.href=ab.href.split('?')[0]+'?lang='+l;
+    document.querySelectorAll('#askbot,.ki-link').forEach(ab=>{ab.href=ab.href.split('?')[0]+'?lang='+l});
     document.documentElement.lang=l;LANG=l;
     btns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===l)));
     try{localStorage.setItem('lang',l)}catch(e){}
