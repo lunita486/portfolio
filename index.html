@@ -675,9 +675,10 @@ const tb=document.getElementById('topbar');const onS=()=>tb.classList.toggle('on
 <script data-goatcounter="https://elizabeth.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script type="module">
 /* Live-Demo: Lena und Herr Wagner mit eigenem Kreis (ElevenLabs JS-SDK, oeffentliche Demo-Agenten mit Limits, kein Schluessel noetig) */
-const TX={de:{ready:"Bereit",con:"Verbinde...",listen:"hört zu",speak:"spricht",mic:"Bitte das Mikrofon erlauben.",err:"Das hat nicht geklappt. Bitte später noch einmal."},
-en:{ready:"Ready",con:"Connecting...",listen:"is listening",speak:"is speaking",mic:"Please allow the microphone.",err:"That did not work. Please try again later."},
-es:{ready:"Listo",con:"Conectando...",listen:"escucha",speak:"habla",mic:"Por favor, permita el micrófono.",err:"No funcionó. Inténtelo más tarde."}};
+const PAUSED=true; /* ElevenLabs-Credits leer: im Januar wieder auf false setzen */
+const TX={de:{paused:"Demo pausiert",pausedMsg:"Die Live-Demo ist gerade pausiert und ab Januar wieder da. Danke für Ihr Interesse!",ready:"Bereit",con:"Verbinde...",listen:"hört zu",speak:"spricht",mic:"Bitte das Mikrofon erlauben.",err:"Das hat nicht geklappt. Bitte später noch einmal."},
+en:{paused:"Demo paused",pausedMsg:"The live demo is paused right now and will be back in January. Thank you for your interest!",ready:"Ready",con:"Connecting...",listen:"is listening",speak:"is speaking",mic:"Please allow the microphone.",err:"That did not work. Please try again later."},
+es:{paused:"Demo en pausa",pausedMsg:"La demo en vivo está en pausa y vuelve en enero. ¡Gracias por su interés!",ready:"Listo",con:"Conectando...",listen:"escucha",speak:"habla",mic:"Por favor, permita el micrófono.",err:"No funcionó. Inténtelo más tarde."}};
 const tx=k=>(TX[document.documentElement.lang]||TX.de)[k];
 const NAME={lena:"Lena",wagner:"Herr Wagner"};
 let SDK=null, active=null;
@@ -685,12 +686,14 @@ document.querySelectorAll(".ev-stage").forEach(stage=>{
   const orb=stage.querySelector(".ev-orb"),call=stage.querySelector(".ev-call"),st=stage.querySelector(".ev-st"),stT=stage.querySelector(".ev-stt"),sub=stage.querySelector(".ev-sub");
   const who=NAME[stage.dataset.who]; let conv=null,busy=false,raf=0,state="idle";
   const ui=s=>{state=s;const on=s==="listen"||s==="speak";st.classList.toggle("on",on);call.classList.toggle("on",on||s==="con");orb.classList.toggle("busy",s==="con");
-    stT.textContent=s==="idle"?tx("ready"):s==="con"?tx("con"):who+" "+tx(s==="speak"?"speak":"listen");};
-  new MutationObserver(()=>ui(state)).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+    stT.textContent=s==="idle"?(PAUSED?tx("paused"):tx("ready")):s==="con"?tx("con"):who+" "+tx(s==="speak"?"speak":"listen");};
+  let pausedShown=false;
+  new MutationObserver(()=>{ui(state); if(pausedShown) sub.textContent=tx("pausedMsg");}).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
   ui("idle");
   const loop=()=>{ if(!conv){orb.style.transform="";return;} let v=0; try{v=Math.max(conv.getOutputVolume(),conv.getInputVolume()*0.6)}catch(e){} orb.style.transform="scale("+(1+Math.min(v,1)*0.25).toFixed(3)+")"; raf=requestAnimationFrame(loop); };
   const stop=async()=>{ if(!conv) return; busy=true; try{await conv.endSession()}catch(e){} conv=null; busy=false; if(active===stop) active=null; ui("idle"); };
   const toggle=async()=>{
+    if(PAUSED){ sub.textContent=tx("pausedMsg"); pausedShown=true; return; }
     if(busy) return; if(conv) return stop();
     if(active) await active();
     busy=true; ui("con"); sub.textContent="";
