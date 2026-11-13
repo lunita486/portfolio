@@ -698,11 +698,11 @@ document.querySelectorAll(".ev-stage").forEach(stage=>{
     catch(e){ busy=false; ui("idle"); sub.textContent=tx("mic"); return; }
     try{
       SDK=SDK||await import("https://cdn.jsdelivr.net/npm/@elevenlabs/client@1.32.1/+esm");
-      conv=await SDK.Conversation.startSession({agentId:stage.dataset.agent,
+      conv=await SDK.Conversation.startSession({agentId:stage.dataset.agent,connectionType:"websocket",
         onModeChange:({mode})=>ui(mode==="speaking"?"speak":"listen"),
         onMessage:({message,source})=>{ if(source==="ai"||source==="agent") sub.textContent=message; },
-        onDisconnect:()=>{ conv=null; cancelAnimationFrame(raf); orb.style.transform=""; if(active===stop) active=null; ui("idle"); },
-        onError:()=>{ sub.textContent=tx("err"); }});
+        onDisconnect:(d)=>{ console.warn("ev disconnect",JSON.stringify(d)); conv=null; cancelAnimationFrame(raf); orb.style.transform=""; if(active===stop) active=null; ui("idle"); },
+        onError:(m,x)=>{ console.warn("ev error",m,JSON.stringify(x)); sub.textContent=tx("err"); }});
       active=stop; ui("listen"); loop();
     }catch(e){ conv=null; ui("idle"); sub.textContent=tx("err"); }
     busy=false;
