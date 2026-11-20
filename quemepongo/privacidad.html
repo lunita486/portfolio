@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuéMePongo · Privacidad</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --fondo:#fff8fa; --texto:#2b1d22; --suave:#6e5a61; --acento:#c2185b; --caja:#fde8ef; --borde:#f3cbd8; }
+  @media (prefers-color-scheme: dark) { :root { --fondo:#1c1417; --texto:#f4e9ed; --suave:#c9b3bb; --acento:#f48fb1; --caja:#2c1e23; --borde:#4a323b; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--fondo); color:var(--texto); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:28px 16px 64px; }
+  h1 { font-size:1.9rem; margin:.2em 0 .1em; color:var(--acento); }
+  h2 { font-size:1.15rem; margin:1.6em 0 .4em; }
+  p, li { color:var(--texto); }
+  .fecha { color:var(--suave); margin-top:0; }
+  .idiomas { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 20px; }
+  .idiomas button { border:1px solid var(--borde); background:var(--caja); color:var(--texto); border-radius:999px; padding:6px 14px; font:inherit; cursor:pointer; }
+  .idiomas button[aria-pressed="true"] { background:var(--acento); color:#fff; border-color:var(--acento); }
+  .resumen { background:var(--caja); border-left:4px solid var(--acento); border-radius:12px; padding:12px 16px; }
+  [data-lang] { display:none; }
+  [data-lang].visible { display:block; }
+  a { color:var(--acento); }
+</style>
+</head>
+<body>
+<main>
+  <div class="idiomas" role="group" aria-label="Idioma / Sprache / Language">
+    <button type="button" data-elegir="es">Español</button>
+    <button type="button" data-elegir="de">Deutsch</button>
+    <button type="button" data-elegir="en">English</button>
+  </div>
+
+  <!-- ESPAÑOL -->
+  <section data-lang="es">
+    <h1>Política de privacidad de QuéMePongo</h1>
+    <p class="fecha">Última actualización: 20 de noviembre de 2026</p>
+    <p class="resumen"><strong>En resumen:</strong> tu ropa, tus fotos y tu selfie se quedan en tu teléfono. La app no tiene anuncios, no te rastrea y no vende datos. Solo se conecta a internet para la copia en tu Google Drive (si la activas) y para comprar Premium con Google Play.</p>
+
+    <h2>1. Responsable</h2>
+    <p>Elizabeth Casas Jiménez, Alemania. Contacto: <a href="mailto:lunita486@gmail.com">lunita486@gmail.com</a></p>
+
+    <h2>2. Lo que se queda en tu teléfono</h2>
+    <ul>
+      <li><strong>Fotos de tu ropa y sus datos</strong> (categoría, color, clima, ocasión), tus looks favoritos, tu diario y tus 👍👎. Se guardan solo dentro de la app.</li>
+      <li><strong>Reconocimiento de prendas:</strong> un modelo de inteligencia artificial (FashionCLIP) mira la foto <strong>dentro del teléfono</strong>. La foto no se envía a ningún servidor.</li>
+      <li><strong>Colorimetría con selfie:</strong> la cara se analiza dentro del teléfono con Google ML Kit. <strong>La selfie no se guarda</strong> y no sale del teléfono. Según Google, ML Kit puede enviar datos técnicos anónimos de diagnóstico, nunca tus fotos.</li>
+    </ul>
+
+    <h2>3. Copia en Google Drive (opcional)</h2>
+    <p>Si inicias sesión con Google, la app recibe tu <strong>correo, tu nombre y tu foto de perfil</strong> (para mostrarte con qué cuenta guardas) y guarda una copia de tu armario en una <strong>carpeta oculta de tu propio Google Drive</strong> que solo esta app puede ver. Nadie más, tampoco yo, tiene acceso. Base legal: tu consentimiento (art. 6.1.a RGPD). Puedes cerrar sesión cuando quieras.</p>
+
+    <h2>4. Compra de Premium</h2>
+    <p>El pago lo hace <strong>Google Play</strong>. La app solo recibe la confirmación de que Premium está comprado; nunca ve tu tarjeta ni tus datos de pago. Base legal: contrato (art. 6.1.b RGPD). Rige también la <a href="https://policies.google.com/privacy" rel="noopener">política de privacidad de Google</a>.</p>
+
+    <h2>5. Lo que la app no hace</h2>
+    <p>No tiene anuncios, ni estadísticas de uso, ni rastreo, ni cuentas propias. No comparte ni vende datos.</p>
+
+    <h2>6. Borrar tus datos</h2>
+    <ul>
+      <li>En el teléfono: borra prendas desde la app o desinstala la app.</li>
+      <li>En Google Drive: en drive.google.com → Configuración → Administrar aplicaciones → QuéMePongo → "Borrar datos ocultos de la aplicación".</li>
+    </ul>
+
+    <h2>7. Tus derechos</h2>
+    <p>Tienes derecho a saber qué datos hay, corregirlos, borrarlos, limitar su uso y retirar tu consentimiento. Escríbeme al correo de arriba. También puedes reclamar ante una autoridad de protección de datos, por ejemplo la de Baja Sajonia (Die Landesbeauftragte für den Datenschutz Niedersachsen).</p>
+
+    <h2>8. Menores</h2>
+    <p>La app no está dirigida a menores de 13 años.</p>
+
+    <h2>9. Cambios</h2>
+    <p>Si esta política cambia, se publica aquí con la nueva fecha.</p>
+  </section>
+
+  <!-- DEUTSCH -->
+  <section data-lang="de">
+    <h1>Datenschutzerklärung von QuéMePongo</h1>
+    <p class="fecha">Stand: 20. November 2026</p>
+    <p class="resumen"><strong>Kurz gesagt:</strong> Deine Kleidung, deine Fotos und dein Selfie bleiben auf deinem Handy. Die App hat keine Werbung, kein Tracking und verkauft keine Daten. Sie verbindet sich nur mit dem Internet für die Sicherung in deinem Google Drive (wenn du sie einschaltest) und für den Kauf von Premium über Google Play.</p>
+
+    <h2>1. Verantwortliche</h2>
+    <p>Elizabeth Casas Jiménez, Deutschland. Kontakt: <a href="mailto:lunita486@gmail.com">lunita486@gmail.com</a></p>
+
+    <h2>2. Was auf deinem Handy bleibt</h2>
+    <ul>
+      <li><strong>Fotos deiner Kleidung und ihre Angaben</strong> (Kategorie, Farbe, Wetter, Anlass), deine Lieblingslooks, dein Tagebuch und deine 👍👎. Sie werden nur in der App gespeichert.</li>
+      <li><strong>Erkennung der Kleidung:</strong> Ein KI-Modell (FashionCLIP) sieht sich das Foto <strong>auf dem Handy</strong> an. Das Foto wird an keinen Server geschickt.</li>
+      <li><strong>Farbtyp-Analyse mit Selfie:</strong> Das Gesicht wird auf dem Handy mit Google ML Kit analysiert. <strong>Das Selfie wird nicht gespeichert</strong> und verlässt das Handy nicht. Laut Google kann ML Kit anonyme technische Diagnosedaten senden, niemals deine Fotos.</li>
+    </ul>
+
+    <h2>3. Sicherung in Google Drive (freiwillig)</h2>
+    <p>Wenn du dich mit Google anmeldest, erhält die App deine <strong>E-Mail-Adresse, deinen Namen und dein Profilbild</strong> (um dir zu zeigen, mit welchem Konto du sicherst) und speichert eine Kopie deines Kleiderschranks in einem <strong>versteckten Ordner deines eigenen Google Drive</strong>, den nur diese App sieht. Niemand sonst, auch ich nicht, hat Zugriff. Rechtsgrundlage: deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Du kannst dich jederzeit abmelden.</p>
+
+    <h2>4. Kauf von Premium</h2>
+    <p>Die Zahlung läuft über <strong>Google Play</strong>. Die App erhält nur die Bestätigung, dass Premium gekauft ist; deine Karte oder Zahlungsdaten sieht sie nie. Rechtsgrundlage: Vertrag (Art. 6 Abs. 1 lit. b DSGVO). Es gilt auch die <a href="https://policies.google.com/privacy?hl=de" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+
+    <h2>5. Was die App nicht macht</h2>
+    <p>Keine Werbung, keine Nutzungsstatistik, kein Tracking, keine eigenen Konten. Daten werden weder weitergegeben noch verkauft.</p>
+
+    <h2>6. Deine Daten löschen</h2>
+    <ul>
+      <li>Auf dem Handy: Teile in der App löschen oder die App deinstallieren.</li>
+      <li>In Google Drive: drive.google.com → Einstellungen → Apps verwalten → QuéMePongo → „Ausgeblendete App-Daten löschen“.</li>
+    </ul>
+
+    <h2>7. Deine Rechte</h2>
+    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerruf deiner Einwilligung. Schreib mir an die E-Mail-Adresse oben. Du kannst dich auch bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der Landesbeauftragten für den Datenschutz Niedersachsen.</p>
+
+    <h2>8. Kinder</h2>
+    <p>Die App richtet sich nicht an Kinder unter 13 Jahren.</p>
+
+    <h2>9. Änderungen</h2>
+    <p>Wenn sich diese Erklärung ändert, wird sie hier mit neuem Datum veröffentlicht.</p>
+  </section>
+
+  <!-- ENGLISH -->
+  <section data-lang="en">
+    <h1>QuéMePongo Privacy Policy</h1>
+    <p class="fecha">Last updated: November 20, 2026</p>
+    <p class="resumen"><strong>In short:</strong> your clothes, your photos and your selfie stay on your phone. The app has no ads, does not track you and does not sell data. It only goes online for the backup to your Google Drive (if you turn it on) and to buy Premium through Google Play.</p>
+
+    <h2>1. Controller</h2>
+    <p>Elizabeth Casas Jiménez, Germany. Contact: <a href="mailto:lunita486@gmail.com">lunita486@gmail.com</a></p>
+
+    <h2>2. What stays on your phone</h2>
+    <ul>
+      <li><strong>Photos of your clothes and their details</strong> (category, color, weather, occasion), your favorite looks, your diary and your 👍👎. They are stored only inside the app.</li>
+      <li><strong>Clothing recognition:</strong> an AI model (FashionCLIP) looks at the photo <strong>on your phone</strong>. The photo is never sent to a server.</li>
+      <li><strong>Color analysis with a selfie:</strong> your face is analyzed on the phone with Google ML Kit. <strong>The selfie is not saved</strong> and never leaves the phone. According to Google, ML Kit may send anonymous technical diagnostic data, never your photos.</li>
+    </ul>
+
+    <h2>3. Google Drive backup (optional)</h2>
+    <p>If you sign in with Google, the app receives your <strong>email address, name and profile picture</strong> (to show which account you back up to) and saves a copy of your wardrobe in a <strong>hidden folder of your own Google Drive</strong> that only this app can see. Nobody else, including me, has access. Legal basis: your consent (Art. 6(1)(a) GDPR). You can sign out at any time.</p>
+
+    <h2>4. Buying Premium</h2>
+    <p>Payment is handled by <strong>Google Play</strong>. The app only receives confirmation that Premium was purchased; it never sees your card or payment details. Legal basis: contract (Art. 6(1)(b) GDPR). <a href="https://policies.google.com/privacy?hl=en" rel="noopener">Google's privacy policy</a> also applies.</p>
+
+    <h2>5. What the app does not do</h2>
+    <p>No ads, no usage analytics, no tracking, no accounts of its own. Data is never shared or sold.</p>
+
+    <h2>6. Deleting your data</h2>
+    <ul>
+      <li>On your phone: delete items in the app or uninstall the app.</li>
+      <li>In Google Drive: drive.google.com → Settings → Manage apps → QuéMePongo → "Delete hidden app data".</li>
+    </ul>
+
+    <h2>7. Your rights</h2>
+    <p>You have the right to access, correct and delete your data, to restrict its use and to withdraw your consent. Write to the email address above. You can also complain to a data protection authority, for example the one for Lower Saxony (Die Landesbeauftragte für den Datenschutz Niedersachsen).</p>
+
+    <h2>8. Children</h2>
+    <p>The app is not directed at children under 13.</p>
+
+    <h2>9. Changes</h2>
+    <p>If this policy changes, the new version is published here with a new date.</p>
+  </section>
+</main>
+<script>
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var nav = (navigator.language || 'es').slice(0, 2);
+    var pedido = params.get('lang') || (['es', 'de', 'en'].indexOf(nav) >= 0 ? nav : 'en');
+    function mostrar(lang) {
+      document.querySelectorAll('[data-lang]').forEach(function (s) { s.classList.toggle('visible', s.getAttribute('data-lang') === lang); });
+      document.querySelectorAll('[data-elegir]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-elegir') === lang ? 'true' : 'false'); });
+      document.documentElement.lang = lang;
+    }
+    document.querySelectorAll('[data-elegir]').forEach(function (b) { b.addEventListener('click', function () { mostrar(b.getAttribute('data-elegir')); }); });
+    mostrar(pedido);
+  })();
+</script>
+</body>
+</html>
